@@ -1,0 +1,518 @@
+/* =========================
+/* =========================
+   DESKTOP ULTRA-WIDE (Acima de 1440px)
+========================= */
+@media (min-width: 1440px) {
+    .main {
+        max-width: 1600px;
+        margin: 0 auto;
+        overflow: hidden;
+        /* Corta qualquer overflow acidental */
+    }
+
+    .cards {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        /* Força todos na mesma linha */
+        justify-content: space-between;
+        /* Distribui o espaço entre eles */
+        gap: 1.5rem;
+        width: 100%;
+        padding: 2rem 0;
+    }
+
+    .cards-content {
+        /* AJUSTE CHAVE AQUI: */
+        flex: 1 1 0px;
+        /* flex-grow: 1 (cresce para ocupar espaço)
+           flex-shrink: 1 (diminui se a tela for pequena, evitando o scroll)
+           flex-basis: 0 (todos começam com o mesmo tamanho)
+        */
+
+        min-width: 300px;
+        /* Um valor menor para não empurrar a tela */
+        max-width: 700px;
+        /* Mantém o limite de tamanho que você queria */
+        height: auto;
+    }
+
+    .cards-content img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-section {
+        padding: 0;
+        /* Remove respiros laterais para um visual imersivo */
+        width: 100%;
+    }
+
+    .carousel {
+        max-width: 100%;
+        /* No Ultra-Wide, carrosséis "Full Width" são tendência */
+        border-radius: 30px;
+        /* Opcional: remover bordas para efeito "Edge-to-Edge" */
+        position: relative;
+    }
+
+    .carousel-item img {
+        height: 85vh;
+        /* Usa a altura da tela (viewport height) em vez de pixels fixos */
+        width: 100%;
+        object-fit: cover;
+        /* Performance: suaviza a renderização */
+        will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Efeito de Overlay: Melhora a leitura de textos sobre a imagem */
+    .carousel-item::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180px, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
+        pointer-events: none;
+    }
+}
+
+@media (min-width: 1199px) {
+    header {
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        background-color: var(--color-text-dark);
+        box-shadow: var(--shadow-medium);
+        border-bottom: 3px solid var(--color-primary-light);
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        /* ALTERAÇÃO CHAVE: Space-between joga os itens para as extremidades */
+        justify-content: space-between;
+        padding: 0 4vw;
+        width: 100%;
+    }
+
+    /* --- MENU E LOGO --- */
+    .logo {
+        order: 1;
+        display: block;
+    }
+
+    #menu {
+        order: 2;
+        display: block !important;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        visibility: visible !important;
+        /* Garante visibilidade */
+        opacity: 1 !important;
+        /* Garante opacidade */
+    }
+
+    #menu ul {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        /* <--- ALINHAMENTO VERTICAL NO CENTRO */
+        justify-content: center !important;
+        gap: 20px;
+        list-style: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+            /* Garante que a lista ocupe a altura disponível */
+    }
+
+    #menu li {
+        margin: 0 !important;
+        /* Remove margens que podem empurrar o primeiro item */
+        padding: 0 !important;
+        display: flex;
+        /* Ajuda a alinhar o link interno */
+        align-items: center;
+    }
+
+    #menu a {
+        font-weight: 500;
+        color: var(--color-text-dark);
+        text-decoration: none;
+    }
+
+    #menu-btn {
+        display: none !important;
+    }
+
+    /* --- RESTANTE DO LAYOUT --- */
+    .carousel-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 1980px;
+        /* Aplica o arredondamento */
+        border-radius: 20px;
+        /* Essencial: corta a imagem para respeitar a borda do container */
+        overflow: hidden;
+    }
+
+    .carousel-item img {
+        height: 800px;
+        object-fit: cover;
+        /* Opcional: garante que a imagem preencha o espaço arredondado */
+        width: 100%;
+    }
+
+    .cards {
+        display: flex;
+        max-height: 700px !important;
+    }
+
+}
+
+/* Configuração para Tablet e Desktop (768px para cima) */
+@media (min-width: 768px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: var(--color-text-dark);
+        box-shadow: var(--shadow-medium);
+        border-bottom: 3px solid var(--color-primary-light);
+    }
+
+    .carousel {
+        padding: 1rem;
+    }
+
+    .carousel-item img {
+        height: 700px;
+    }
+
+    .content {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        /* Logo na esquerda, Menu na direita */
+        padding: 0 4vw;
+        width: 100%;
+    }
+
+    /* 1. ESCONDE O BOTÃO SANDUÍCHE */
+    #menu-btn {
+        display: none !important;
+    }
+
+    /* 2. MOSTRA O MENU E JOGA PARA A DIREITA */
+    #menu {
+        display: flex !important;
+        order: 2;
+        position: static !important;
+        /* Remove posicionamento absoluto de celular */
+        background: transparent !important;
+        box-shadow: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .cards {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        /* Força apenas 2 colunas */
+        gap: 2rem;
+        padding: 2rem;
+        height: auto;
+        /* Deixe o conteúdo definir a altura */
+    }
+
+    .cards-content {
+        aspect-ratio: 20 / 9;
+        /* Deixa os cards mais retangulares para caberem 2 lado a lado */
+    }
+
+    #menu ul {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        /* <--- ALINHAMENTO VERTICAL NO CENTRO */
+        justify-content: center !important;
+        gap: 20px;
+        list-style: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        /* Garante que a lista ocupe a altura disponível */
+    }
+
+    #menu li {
+        margin: 0 !important;
+        /* Remove margens que podem empurrar o primeiro item */
+        padding: 0 !important;
+        display: flex;
+        /* Ajuda a alinhar o link interno */
+        align-items: center;
+    }
+
+    /* 4. LOGO NA ESQUERDA */
+    .logo {
+        order: 1;
+        display: block !important;
+    }
+
+    #menu a {
+        text-decoration: none;
+        color: #ffffff !important;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .banner {
+        height: 550px;
+        min-height: 500px;
+        margin-top: 1rem;
+        /* Ajustado de 12rem para 2rem */
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+footer {
+    margin-top: 0;
+}
+
+
+/* =========================
+   TABLET (até 768px)
+========================= */
+@media (max-width: 767px) {
+
+
+    .main {
+        padding: clamp(0.5rem, 2vw, 1rem);
+    }
+
+    .section-title {
+        margin: 1.5rem 0;
+    }
+
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+    .content {
+        padding: 0 1rem;
+    }
+
+    .banner {
+        /* No desktop voltamos para uma altura fixa ou fluida controlada */
+        aspect-ratio: auto;
+        height: clamp(350px, 45vh, 400px);
+        padding-top: 0;
+        /* Ajuste dependendo de como seu header se comporta no desktop */
+    }
+
+    .carousel-item img {
+        height: 350px;
+        padding: 1rem;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-content {
+        aspect-ratio: 1 / 1.1;
+    }
+
+    .banner {
+        height: clamp(350px, 35vh, 300px);
+        min-height: 350px;
+        margin-top: -80px;
+    }
+
+    footer {
+        padding: 2rem 1rem 0;
+        margin-top: 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    #menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 10px;
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        z-index: 101;
+        min-width: 200px;
+    }
+
+    #menu.ativo {
+        display: block;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    #menu ul {
+        display: block;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+}
+
+/* =========================
+   MOBILE PEQUEÑO (hasta 480px)
+========================= */
+@media (max-width: 480px) {
+
+    .content {
+        height: 70px;
+        padding: 0 0.5rem;
+    }
+
+    .logo img {
+        max-width: 140px;
+    }
+
+
+    .carousel-item img {
+        height: 280px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .cards-content {
+        height: 240px;
+        aspect-ratio: auto;
+    }
+
+    .section-title h2 {
+        font-size: 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        gap: 0.8rem;
+    }
+
+    .social-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .banner {
+        height: clamp(180px, 35vh, 250px);
+        min-height: 180px;
+        margin-top: -60px;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-content .img-wrapper {
+        aspect-ratio: 16 / 9;
+        /* horizontal no mobile */
+    }
+
+    footer {
+        padding: 1.5rem 1rem 0;
+    }
+}
+
+/* =========================
+   ULTRA PEQUEÑO (hasta 320px)
+========================= */
+@media (max-width: 320px) {
+    .content {
+        height: 60px;
+        gap: 0.5rem;
+    }
+
+    .logo img {
+        max-width: 100px;
+    }
+
+    .carousel-item img {
+        height: 220px;
+    }
+
+    .cards-content {
+        height: 180px;
+    }
+
+    .section-title h2 {
+        font-size: 18px;
+    }
+
+    .footer-title {
+        font-size: 14px;
+    }
+
+    .banner {
+        height: clamp(150px, 30vh, 200px);
+        min-height: 150px;
+        margin-top: -40px;
+        background-position: center bottom;
+    }
+}
+
+/* =========================
+   TOUCH DEVICES
+========================= */
+@media (hover: none) and (pointer: coarse) {
+    .cards-content {
+        touch-action: manipulation;
+    }
+
+    .cards-content:active {
+        transform: scale(0.95);
+    }
+}
+
+/* ===== HOVER DESKTOP ===== */
+@media (hover: hover) {
+    .cards-content:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--card-shadow-hover);
+    }
+
+    .cards-content:hover img {
+        transform: scale(1.1);
+    }
+}

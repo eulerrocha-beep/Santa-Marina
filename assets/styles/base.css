@@ -1,0 +1,40 @@
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    margin: 0;
+    /* Sempre bom resetar o margin do body */
+    background: var(--gray-light-warm);
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: clamp(450px, 45vh, 400px);
+    min-height: 450px;
+
+    background: 
+        linear-gradient(
+            to top,
+            rgba(232, 227, 223, 0) 50%,   /* metade de baixo sem efeito */
+            rgba(232, 227, 223, 0.9) 100% /* topo cinza */
+        ),
+        url('/assets/img/Compro.png') center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+}
+
+    .banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
+
+    .banner {
+        position: relative;
+        z-index: -1;
+        color: white;
+    }

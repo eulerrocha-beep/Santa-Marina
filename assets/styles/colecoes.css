@@ -1,0 +1,339 @@
+@import url('colors.css');
+@import url('menu.css');
+
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    margin: 0;
+    box-sizing: border-box;
+    /* Sempre bom resetar o margin do body */
+    background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('/assets/img/colecoes.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    border-bottom: 3px solid var(--color-primary-light);
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    background: var(--color-text-dark);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: transparent;
+
+    letter-spacing: 1px;
+}
+
+.logo {
+    flex-shrink: 0;
+    display: block;
+}
+
+.logo img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    margin: 40px auto;
+    max-width: 320px;
+    height: 450px;
+    background: var(--color-text-dark);
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: var(--color-primary-light);
+}
+
+/* 🔍 FILTROS */
+.filtros {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.filtros button {
+    margin: 5px;
+    padding: 10px 18px;
+    border: none;
+    background: var(--color-text-dark);
+    color: #fff;
+    border-radius: 999px; /* pill */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtros button:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+/* 🛍️ CATÁLOGO */
+.catalogo {
+    display: grid;
+    padding: 3rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* 📦 PRODUTO */
+.produto {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.produto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.produto:hover img {
+    transform: scale(1.05);
+}
+
+.produto h3 {
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 21vh;
+    color: var(--color-primary-light);
+
+    background: linear-gradient(to right, #222222, #333333, #444444);
+    border-top: 3px solid var(--color-primary-light);
+    font-size: 0.9rem;
+}
+
+@media (min-width: 500px) {
+        .catalogo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+
+@media (min-width: 768px) {
+
+    /* 1. ESCONDE O BOTÃO SANDUÍCHE */
+    #menu-btn {
+        display: none !important;
+    }
+
+    /* 2. MOSTRA O MENU E JOGA PARA A DIREITA */
+    #menu {
+        display: flex !important;
+        order: 2;
+        position: static !important;
+        /* Remove posicionamento absoluto de celular */
+        background: transparent !important;
+        box-shadow: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    #menu ul {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        /* <--- ALINHAMENTO VERTICAL NO CENTRO */
+        justify-content: center !important;
+        gap: 20px;
+        list-style: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        /* Garante que a lista ocupe a altura disponível */
+    }
+
+    #menu li {
+        margin: 0 !important;
+        /* Remove margens que podem empurrar o primeiro item */
+        padding: 0 !important;
+        display: flex;
+        /* Ajuda a alinhar o link interno */
+        align-items: center;
+    }
+
+    /* 4. LOGO NA ESQUERDA */
+    .logo {
+        order: 1;
+        display: block !important;
+    }
+
+    #menu a {
+        text-decoration: none;
+        color: #ffffff !important;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .content {
+        height: 100px;
+        text-align: left;
+        max-width: 100%;
+        padding: 0 2rem;
+    }
+
+    .container {
+        max-width: 500px;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+}
+
+
+/* =========================
+   DESKTOP (≥ 1024px)
+========================= */
+
+@media (min-width: 1024px) {
+
+    .catalogo {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        /* ALTERAÇÃO CHAVE: Space-between joga os itens para as extremidades */
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    /* --- MENU E LOGO --- */
+    .logo {
+        order: 1;
+        display: block;
+    }
+
+    #menu {
+        order: 2;
+        display: block !important;
+        position: absolute;
+        z-index: 1000;
+        pointer-events: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        visibility: visible !important;
+        /* Garante visibilidade */
+        opacity: 1 !important;
+        /* Garante opacidade */
+    }
+
+    #menu ul {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        /* <--- ALINHAMENTO VERTICAL NO CENTRO */
+        justify-content: center !important;
+        gap: 20px;
+        list-style: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        /* Garante que a lista ocupe a altura disponível */
+    }
+
+    #menu li {
+        margin: 0 !important;
+        /* Remove margens que podem empurrar o primeiro item */
+        padding: 0 !important;
+        display: flex;
+        /* Ajuda a alinhar o link interno */
+        align-items: center;
+    }
+
+    #menu a {
+        font-weight: 500;
+        color: var(--color-text-dark);
+        text-decoration: none;
+    }
+
+    #menu-btn {
+        display: none !important;
+    }
+
+    .container {
+        max-width: 600px;
+    }
+
+    input,
+    textarea {
+        font-size: 1.05rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* =========================
+   TELAS GRANDES (≥ 1440px)
+========================= */
+
+@media (min-width: 1440px) {
+
+    .catalogo {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .content {
+        max-width: 1400px;
+    }
+
+    .container {
+        max-width: 650px;
+        height: 480px;
+    }
+}

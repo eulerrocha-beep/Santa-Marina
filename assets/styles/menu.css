@@ -1,0 +1,100 @@
+#menu {
+    display: block;
+    position: absolute;
+    top: calc(100% + var(--menu-gap, 10px));
+    right: 10px;
+    min-width: 220px;
+    padding: 1rem;
+
+    /* CORRIGIDO: fundo claro para contraste */
+    background: var(--color-white, #fff);
+
+    border-radius: var(--radius-md, 8px);
+    box-shadow: var(--menu-shadow, 0 10px 25px rgba(0,0,0,0.15));
+    z-index: 1000;
+
+    /* Ocultação performática */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: auto;
+    transform: translate3d(0, -10px, 0);
+
+    /* Transições limpas */
+    transition: 
+        opacity var(--transition-normal, 0.3s) ease,
+        transform var(--transition-normal, 0.3s) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado ativo */
+#menu.ativo {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Lista */
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu li + li {
+    margin-top: 0.5rem;
+}
+
+/* Links */
+#menu a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    /* CORRIGIDO: texto escuro no fundo claro */
+    color: var(--color-text-dark, #333);
+
+    text-decoration: none;
+    border-radius: var(--radius-sm, 4px);
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover / Active */
+#menu a:hover,
+#menu a:active {
+    background-color: rgba(var(--color-secondary-rgb, 0, 0, 0), 0.08);
+    color: var(--color-secondary, #007bff);
+}
+
+/* Botão hambúrguer */
+#menu-btn {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 48px;
+    min-height: 48px;
+
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    color: var(--color-white, #fff);
+    transition: transform 0.2s ease;
+}
+
+#menu-btn:active {
+    transform: scale(0.9);
+}
+
+/* Acessibilidade */
+#menu-btn:focus-visible {
+    outline: 2px solid var(--color-secondary, #007bff);
+    outline-offset: 4px;
+}

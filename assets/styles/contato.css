@@ -1,0 +1,296 @@
+@import url('colors.css');
+@import url('menu.css');
+
+
+header {
+    border-bottom: 3px solid var(--color-primary-light);
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    background: var(--color-text-dark);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: transparent;
+
+    letter-spacing: 1px;
+}
+
+.logo {
+    flex-shrink: 0;
+    display: block;
+}
+
+.logo img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    margin: 0;
+    box-sizing: border-box;
+    /* Sempre bom resetar o margin do body */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url(/assets/img/Contato.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    margin: 40px auto;
+    max-width: 320px;
+    height: 450px;
+    background: var(--color-text-dark);
+    padding: 1rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primary-light);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid var(--color-accent);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    background: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.msg {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: green;
+    display: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 21vh;
+    color: var(--color-primary-light);
+
+    background: linear-gradient(to right, #222222, #333333, #444444);
+    border-top: 3px solid var(--color-primary-light);
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+
+    /* 1. ESCONDE O BOTÃO SANDUÍCHE */
+    #menu-btn {
+        display: none !important;
+    }
+
+    /* 2. MOSTRA O MENU E JOGA PARA A DIREITA */
+    #menu {
+        display: flex !important;
+        order: 2;
+        position: static !important;
+        /* Remove posicionamento absoluto de celular */
+        background: transparent !important;
+        box-shadow: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+     #menu ul {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        /* <--- ALINHAMENTO VERTICAL NO CENTRO */
+        justify-content: center !important;
+        gap: 20px;
+        list-style: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        /* Garante que a lista ocupe a altura disponível */
+    }
+
+    #menu li {
+        margin: 0 !important;
+        /* Remove margens que podem empurrar o primeiro item */
+        padding: 0 !important;
+        display: flex;
+        /* Ajuda a alinhar o link interno */
+        align-items: center;
+    }
+
+    /* 4. LOGO NA ESQUERDA */
+    .logo {
+        order: 1;
+        display: block !important;
+    }
+
+    #menu a {
+        text-decoration: none;
+        color: #ffffff !important;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .content {
+        height: 100px;
+        text-align: left;
+        max-width: 100%;
+        padding: 0 2rem;
+    }
+
+    .container {
+        max-width: 500px;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/* =========================
+   DESKTOP (≥ 1024px)
+========================= */
+
+@media (min-width: 1024px) {
+
+    .content {
+        display: flex;
+        align-items: center;
+        /* ALTERAÇÃO CHAVE: Space-between joga os itens para as extremidades */
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    /* --- MENU E LOGO --- */
+    .logo {
+        order: 1;
+        display: block;
+    }
+
+    #menu {
+        order: 2;
+        display: block !important;
+        position: absolute;
+        z-index: 1000;
+        pointer-events: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        visibility: visible !important;
+        /* Garante visibilidade */
+        opacity: 1 !important;
+        /* Garante opacidade */
+    }
+
+    #menu ul {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        /* <--- ALINHAMENTO VERTICAL NO CENTRO */
+        justify-content: center !important;
+        gap: 20px;
+        list-style: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        /* Garante que a lista ocupe a altura disponível */
+    }
+
+    #menu li {
+        margin: 0 !important;
+        /* Remove margens que podem empurrar o primeiro item */
+        padding: 0 !important;
+        display: flex;
+        /* Ajuda a alinhar o link interno */
+        align-items: center;
+    }
+
+    #menu a {
+        font-weight: 500;
+        color: var(--color-text-dark);
+        text-decoration: none;
+    }
+
+    #menu-btn {
+        display: none !important;
+    }
+
+    .container {
+        max-width: 600px;
+    }
+
+    input,
+    textarea {
+        font-size: 1.05rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* =========================
+   TELAS GRANDES (≥ 1440px)
+========================= */
+
+@media (min-width: 1440px) {
+
+    .content {
+        max-width: 1400px;
+    }
+
+    .container {
+        max-width: 650px;
+        height: 480px;
+    }
+}

@@ -1,0 +1,75 @@
+/* ===== CARDS GRID ===== */
+.cards {
+    --card-radius: var(--radius-lg, 16px);
+    --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --card-shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.2);
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: clamp(1rem, 3vw, 2rem);
+}
+
+/* ===== CARD WRAPPER ===== */
+.cards-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    background-color: #f8f9fa; /* garante fundo claro para todos os cards */
+    cursor: pointer;
+
+    /* Hardware Acceleration */
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.3s ease;
+
+    min-height: 320px; /* altura mínima para evitar fundo preto no último card */
+}
+
+/* ===== IMAGE CONTAINER ===== */
+.cards-content .img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+}
+
+.cards-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+    display: block;
+}
+
+/* ===== CARD TEXT OVERLAY ===== */
+.cards-content span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 1rem 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    z-index: 2;
+    transition: transform 0.3s ease;
+    pointer-events: none; /* impede que o overlay capture cliques */
+    font-family: var(--font-primary)
+}
+
+/* ===== FOCUS PARA ACESSIBILIDADE ===== */
+.cards-content:focus-within {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 4px;
+}
+
+/* ===== ACTIVE MOBILE FEEDBACK ===== */
+.cards-content:active {
+    transform: scale(0.96);
+    transition: transform 0.1s ease;
+}

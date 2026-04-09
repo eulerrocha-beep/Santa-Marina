@@ -1,0 +1,30 @@
+/* ===== HEADER ===== */
+header {
+    border-bottom: 3px solid var(--color-primary-light);
+    position: relative;
+    z-index: 10;
+    background: var(--color-text-dark);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    max-width: 1400px;
+    margin: 0 auto;
+
+    letter-spacing: 1px;
+}
+
+.logo {
+    flex-shrink: 0;
+    display: block;
+}
+
+.logo img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}

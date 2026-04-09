@@ -1,0 +1,16 @@
+/* Titulo */
+
+.section-title {
+    font-family: var(--font-heading);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--color-primary-light);
+    padding: 0.850rem;
+}
+
+.main .section-title h2 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--color-primary-light);
+}
