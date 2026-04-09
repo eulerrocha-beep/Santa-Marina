@@ -10,7 +10,7 @@
     background: var(--color-white, #fff);
 
     border-radius: var(--radius-md, 8px);
-    box-shadow: var(--menu-shadow, 0 10px 25px rgba(0,0,0,0.15));
+    box-shadow: var(--menu-shadow, 0 10px 25px rgba(0, 0, 0, 0.15));
     z-index: 1000;
 
     /* Ocultação performática */
@@ -20,7 +20,7 @@
     transform: translate3d(0, -10px, 0);
 
     /* Transições limpas */
-    transition: 
+    transition:
         opacity var(--transition-normal, 0.3s) ease,
         transform var(--transition-normal, 0.3s) cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -40,7 +40,7 @@
     padding: 0;
 }
 
-#menu li + li {
+#menu li+li {
     margin-top: 0.5rem;
 }
 
@@ -77,8 +77,11 @@
     align-items: center;
     justify-content: center;
 
-    min-width: 48px;
-    min-height: 48px;
+    font-size: 1.5rem;
+
+    width: 100px;
+    height: 100px;
+
 
     padding: 0;
     background: transparent;
