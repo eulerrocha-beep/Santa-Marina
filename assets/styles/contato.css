@@ -42,7 +42,7 @@ body {
     box-sizing: border-box;
     /* Sempre bom resetar o margin do body */
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url(/assets/img/Contato.png);
+        url('assets/img/Contato.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
