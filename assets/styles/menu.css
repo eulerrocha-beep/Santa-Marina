@@ -1,14 +1,13 @@
 #menu {
     display: block;
     position: absolute;
-    top: calc(100% + var(--menu-gap, 10px));
+    top: calc(100% + 10px);
     right: 10px;
-    min-width: 220px;
+    min-width: 325px;
     padding: 1rem;
 
     /* CORRIGIDO: fundo claro para contraste */
-    background: var(--color-white, #fff);
-
+    background: var(--color-text-dark)!important;
     border-radius: var(--radius-md, 8px);
     box-shadow: var(--menu-shadow, 0 10px 25px rgba(0, 0, 0, 0.15));
     z-index: 1000;
@@ -49,13 +48,11 @@
     display: flex;
     align-items: center;
     min-height: 44px;
-    padding: 0.5rem 0.75rem;
-
     font-size: 1rem;
     font-weight: 500;
 
     /* CORRIGIDO: texto escuro no fundo claro */
-    color: var(--color-text-dark, #333);
+    color: var(--color-primary-light);
 
     text-decoration: none;
     border-radius: var(--radius-sm, 4px);
