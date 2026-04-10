@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+    // so vai executar quando o html estiver carregado
     const state = {
         sanduiche: {
             menu: document.getElementById("menu"),
@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // ✅ Menu hambúrguer com proteção
-    if (state.sanduiche.btn && state.sanduiche.menu) {
+    //  Menu hambúrguer com proteção
+    if (state.sanduiche.btn && state.sanduiche.menu) { // verifica se os elementos existem antes de usar
         state.sanduiche.btn.addEventListener("click", () => {
-            state.sanduiche.menu.classList.toggle("ativo");
+            state.sanduiche.menu.classList.toggle("ativo");  // quando clica remove ou add a classe ativo
         });
     }
 
