@@ -59,16 +59,21 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 
-    padding: 2rem;
+    padding: 1rem;
     color: white;
 }
 
 .conteiner h2 {
     font-family: var(--font-primary);
+    color: var(--color-primary-light);
+    ;
 }
 
 .conteiner p {
     font-family: var(--font-heading);
+    font-size: 0.750rem;
+    line-height: 1.6;
+    width: 350px;
 }
 
 footer {
@@ -103,6 +108,13 @@ footer {
     footer {
         height: 22vh;
     }
+
+    .conteiner p {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        line-height: 1.6;
+        width: 600px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -112,6 +124,7 @@ footer {
         margin: 0 auto;
         gap: 1rem;
     }
+
 
     .content {
         max-width: 100vw;
@@ -138,7 +151,7 @@ footer {
         visibility: visible !important;
     }
 
-     #menu ul {
+    #menu ul {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
