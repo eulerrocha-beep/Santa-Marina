@@ -45,74 +45,102 @@
 
     <!-- 🔍 FILTROS -->
     <div class="filtros">
-        <button onclick="filtrar('todos')">Todos</button>
-        <button onclick="filtrar('sanitario')">Sánitarios</button>
-        <button onclick="filtrar('cubas')">Cubas</button>
-        <button onclick="filtrar('mictorio')">mictório</button>
+        <button data-filtro="todos">Todos</button>
+        <button data-filtro="sanitario">Sánitarios</button>
+        <button data-filtro="cubas">Cubas</button>
+        <button data-filtro="mictorio">Mictórios</button>
+        <button data-filtro="universal">Universal</button>
     </div>
 
     <!-- 🛍️ CATÁLOGO -->
     <div class="catalogo">
 
-        <div class="produto" data-categoria="vaso">
-            <img src="img/vaso1.jpg" alt="">
-            <h3>Vaso Sanitário</h3>
+        <div class="produto" data-categoria="sanitario">
+            <img src="assets/img/products/Bacia-com-caixa-acoplada-Donna-600x600.avif" alt="Vaso Sanitário Donna">
+            <h3>Vaso Donna com Caixa Acoplada</h3>
         </div>
 
-        <div class="produto" data-categoria="vaso">
-            <img src="img/vaso2.jpg" alt="">
-            <h3>Vaso com Caixa Acoplada</h3>
+        <div class="produto" data-categoria="sanitario">
+            <img src="assets/img/products/Bacia-para-valvula-de-descarga-Donna-600x600.avif" alt="Vaso Sanitário Donna sem acoplamento">
+            <h3>Vaso Donna sem Caixa Acoplada</h3>
         </div>
 
-        <div class="produto" data-categoria="cuba">
-            <img src="img/cuba1.jpg" alt="">
-            <h3>Cuba de Apoio</h3>
+        <div class="produto" data-categoria="sanitario">
+            <img src="assets/img/products/Bacia-com-caixa-acoplada-Liberty-600x600.avif" alt="Vaso Sanitário Liberty com acoplamento">
+            <h3>Vaso Liberty com Caixa Acoplada</h3>
         </div>
 
-        <div class="produto" data-categoria="cuba">
-            <img src="img/cuba2.jpg" alt="">
-            <h3>Cuba de Embutir</h3>
+        <div class="produto" data-categoria="sanitario">
+            <img src="assets/img/products/Bacia-para-valvula-de-descarga-Liberty.avif" alt="Vaso Sanitário Liberty sem acoplamento">
+            <h3>Vaso liberty sem Caixa Acoplada</h3>
         </div>
 
-        <div class="produto" data-categoria="cuba">
-            <img src="img/cuba3.jpg" alt="">
-            <h3>Cuba de Sobrepor</h3>
+        <div class="produto" data-categoria="sanitario">
+            <img src="assets/img/products/Bacia-com-caixa-acoplada-Valentina.avif" alt="Vaso Sanitário Valentina com acoplamento">
+            <h3>Vaso Valentina com Caixa Acoplada</h3>
+        </div>
+
+        <div class="produto" data-categoria="sanitario">
+            <img src="assets/img/products/Bacia-para-válvula-de-descarga-Valentina-600x600.avif" alt="Vaso Sanitário Valentina sem acoplamento">
+            <h3>Vaso Valentina sem Caixa Acoplada</h3>
+        </div>
+
+        <div class="produto" data-categoria="sanitario">
+            <img src="assets/img/products/CONJUNTO-VASO-E-CAIXA-ACOPLADA-EVOLUTION-BR--300x300.avif" alt="Vaso Sanitário Evolution com acoplamento">
+            <h3>Vaso Evolution com Caixa Acoplada</h3>
+        </div>
+        
+        <div class="produto" data-categoria="sanitario">
+            <img src="assets/img/products/Bacia-para-válvula-de-descarga-Evolution-300x300.avif" alt="Vaso Sanitário evolution sem acoplamento">
+            <h3>Vaso Evolution sem Caixa Acoplada</h3>
+        </div>
+
+
+        <div class="produto" data-categoria="cubas">
+            <img src="assets/img/products/cuba-oval-pq.jpg.avif" alt="cuba Oval">
+            <h3>Cuba Oval PQ</h3>
+        </div>
+
+        <div class="produto" data-categoria="cubas">
+            <img src="assets/img/products/cuba-redonda-pq.avif" alt="cuba Redonda">
+            <h3>Cuba Redonda PQ</h3>
+        </div>
+
+        <div class="produto" data-categoria="cubas">
+            <img src="assets/img/products/Cuba-oval-Universal-600x600.avif" alt="cuba oval universal">
+            <h3>Cuba Oval Universal</h3>
+        </div>
+
+        <div class="produto" data-categoria="cubas">
+            <img src="assets/img/products/cuba-com-mesa-diamante-base-torneira-600x600.avif" alt="cuba com mesa diamante">
+            <h3>Cuba Retangular Com Mesa</h3>
+        </div>
+
+        <div class="produto" data-categoria="cubas">
+            <img src="assets/img/products/cuba-sem-mesa-topazio-600x600.avif" alt="cuba sem mesa topazio">
+            <h3>Cuba Retangular Sem Mesa</h3>
+        </div>
+
+        <div class="produto" data-categoria="universal">
+            <img src="assets/img/products/Caixa-com-mecanismo-3-6-litros.png.avif" alt="cuba com mesa diamante">
+            <h3>Caixa Com Mecanismo 3 / 6 Litros</h3>
+        </div>
+
+        <div class="produto" data-categoria="universal">
+            <img src="assets/img/products/Coluna-para-lavatório.avif" alt="coluna para Lavatório">
+            <h3>Coluna Para Lavatório</h3>
         </div>
 
         <div class="produto" data-categoria="mictorio">
-            <img src="img/mictorio1.jpg" alt="">
-            <h3>Mictório</h3>
+            <img src="assets/img/products/Mictorio-Universal.avif" alt="mictorio Universal">
+            <h3>Mictorio Universal</h3>
         </div>
 
-        <div class="produto" data-categoria="lavatorio">
-            <img src="img/lavatorio1.jpg" alt="">
-            <h3>Lavatório com Coluna</h3>
+        <div class="produto" data-categoria="universal">
+            <img src="assets/img/products/Tampa-para-caixa.avif" alt="tampa para caixa">
+            <h3>Tampa Para Caixa</h3>
         </div>
 
-        <div class="produto" data-categoria="lavatorio">
-            <img src="img/lavatorio2.jpg" alt="">
-            <h3>Lavatório Suspenso</h3>
-        </div>
-
-        <div class="produto" data-categoria="tanque">
-            <img src="img/tanque1.jpg" alt="">
-            <h3>Tanque de Louça</h3>
-        </div>
-
-        <div class="produto" data-categoria="">
-            <img src="img/bide1.jpg" alt="">
-            <h3>Bidê</h3>
-        </div>
-
-        <div class="produto" data-categoria="cuba">
-            <img src="img/cuba4.jpg" alt="">
-            <h3>Cuba Oval</h3>
-        </div>
-
-        <div class="produto" data-categoria="cuba">
-            <img src="img/cuba5.jpg" alt="">
-            <h3>Cuba Retangular</h3>
-        </div>
     </div>
     <footer>
         <p>© 2026 - Casa Santa Marina</p>
