@@ -139,11 +139,12 @@ h1 {
     bottom: 0;
     left: 0;
     width: 100%;
-    font-size: 0.765rem;
-
+    font-size: 0.665rem;
+    
     padding: 20px 12px 12px;
     margin: 0;
-
+    
+    text-align: center;
     color: white;
 
     background: linear-gradient(
